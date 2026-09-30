@@ -787,16 +787,18 @@ def collect(paths: list[str]) -> list[Path]:
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description="IMM-Core-Entwürfe aus lokalen Transkripten.")
-    ap.add_argument("paths", nargs="*", help="Dateien oder Ordner (Standard: DIAR2META_IN)")
+    ap.add_argument("paths", nargs="*", help="Dateien oder Ordner (Standard: input/ bzw. DIAR2META_IN)")
     ap.add_argument("--out", default=env("DIAR2META_OUT", str(HERE / "output")))
     ap.add_argument("--fresh", action="store_true", default=env("DIAR2META_FRESH", "0") == "1",
                     help="vorhandene Entwürfe neu erzeugen (alter Entwurf bleibt als .bak)")
     args = ap.parse_args(argv)
-    paths = args.paths or [env("DIAR2META_IN", "~/Downloads/diar2/output")]
+    paths = args.paths or [env("DIAR2META_IN", str(HERE / "input"))]
     out_root = Path(args.out).expanduser()
     sources = collect(paths)
     if not sources:
-        print("Keine Transkripte gefunden.", file=sys.stderr)
+        print(f"Keine Transkripte in {', '.join(paths)}.\n"
+              "Ergebnisordner von diar2 (z. B. ~/Downloads/diar2/output/NAME) dorthin kopieren "
+              "oder direkt: diar2meta ~/Downloads/diar2/output", file=sys.stderr)
         return 1
     failed = 0
     for src in sources:

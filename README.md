@@ -14,21 +14,37 @@ derived by rules, shows the evidence, and lists what a person must fill in or co
   draft fails validation until a person has completed it.
 - **Manual edits are safe.** An existing draft is never overwritten; `--fresh` keeps the old one as a backup.
 
-## Usage
+## Install
 
 ```sh
-python3 ~/Projects/diar2meta/diar2meta.py                         # all diar2 results in ~/Downloads/diar2/output
-python3 ~/Projects/diar2meta/diar2meta.py path/to/NAME.diar2.json  # one file
-python3 ~/Projects/diar2meta/diar2meta.py some/folder --fresh      # a folder; recompute existing drafts
+git clone https://github.com/klausbehnamshad/diar2meta.git ~/Downloads/diar2meta
 ```
 
-Optional: an alias in `~/.zshrc` or `~/.bash_profile`:
+Add one line to `~/.bash_profile` (bash) or `~/.zshrc` (zsh), with your institution code and name, and open a new
+Terminal window:
 
 ```sh
-alias diar2meta='python3 ~/Projects/diar2meta/diar2meta.py'
+alias diar2meta='DIAR2META_INSTITUTION=LHI DIAR2META_INTERVIEWER="Jane Doe" python3 ~/Downloads/diar2meta/diar2meta.py'
 ```
 
-Results are written to `output/NAME/` inside this folder (`--out` or `DIAR2META_OUT` to change).
+## Everyday use
+
+1. Copy the result folders of diar2 (`~/Downloads/diar2/output/NAME/`) or single transcripts into
+   `~/Downloads/diar2meta/input`.
+2. Open the Terminal and type `diar2meta`.
+3. Find the results in `~/Downloads/diar2meta/output/NAME/`: read `NAME.pruefliste.txt`, complete
+   `NAME.imm.draft.json`.
+
+diar2meta processes every transcript in `input/` that has no draft yet and skips the others, so manual edits are
+kept. Other ways to call it:
+
+```sh
+diar2meta ~/Downloads/diar2/output        # read the diar2 results directly, without copying
+diar2meta path/to/NAME.diar2.json         # one file
+diar2meta --fresh                         # recompute existing drafts; the old draft is kept as a backup
+```
+
+The `input/` and `output/` folders are listed in `.gitignore`.
 
 ## Inputs
 
@@ -89,7 +105,7 @@ BESTÄTIGEN
 
 | Variable | Default | Meaning |
 |---|---|---|
-| `DIAR2META_IN` | `~/Downloads/diar2/output` | Where to look when no path is given |
+| `DIAR2META_IN` | `input/` in this folder | Where to look when no path is given |
 | `DIAR2META_OUT` | `output/` in this folder | Folder for results |
 | `DIAR2META_FRESH` | `0` | `1` recomputes existing drafts (old draft kept as `.bak-…`) |
 | `DIAR2META_INSTITUTION` | empty | Institution code for `record_id`, e.g. `LHI` |
@@ -149,5 +165,6 @@ The author reviewed every AI-assisted contribution before it was adopted.
 
 diar2meta erstellt aus lokalen Transkripten (z. B. von diar2) Entwürfe für IMM-Core-Metadaten. Automatisch
 ermittelt werden Datum, Sprache, Zeitabschnitte und die record_id. Jeder Wert ist mit seiner Herkunft belegt. Eine
-Prüfliste zeigt, was von Hand auszufüllen ist. Einwilligung und Zugangsrechte werden nie automatisch gesetzt. Das
-Programm läuft offline und braucht nur die Python-Standardbibliothek.
+Prüfliste zeigt, was von Hand auszufüllen ist. Einwilligung und Zugangsrechte werden nie automatisch gesetzt. Transkripte in
+`~/Downloads/diar2meta/input` legen (z. B. die Ergebnisordner von diar2), `diar2meta` tippen, Ergebnis in
+`~/Downloads/diar2meta/output/NAME/`. Das Programm läuft offline und braucht nur die Python-Standardbibliothek.

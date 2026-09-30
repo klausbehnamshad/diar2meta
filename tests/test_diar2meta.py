@@ -260,3 +260,15 @@ def test_standard_library_only():
     import re
     mods = set(re.findall(r"^(?:from|import) (\w+)", src, re.MULTILINE)) - {"__future__"}
     assert mods <= set(sys.stdlib_module_names), mods - set(sys.stdlib_module_names)
+
+
+def test_default_input_folder_and_hint_when_empty(tmp_path, monkeypatch, capsys):
+    monkeypatch.setenv("DIAR2META_IN", str(tmp_path / "input"))
+    (tmp_path / "input").mkdir()
+    assert d.main(["--out", str(tmp_path / "out")]) == 1
+    assert "diar2meta ~/Downloads/diar2/output" in capsys.readouterr().err
+    folder = tmp_path / "input" / "a"
+    folder.mkdir()
+    write(folder, "a.diar2.json", synthetic_diar2())
+    assert d.main(["--out", str(tmp_path / "out")]) == 0
+    assert (tmp_path / "out" / "a" / "a.imm.draft.json").exists()
