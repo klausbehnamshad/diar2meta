@@ -133,9 +133,17 @@ The tests use synthetic dialogues only.
 
 Apache-2.0, see [LICENSE](LICENSE).
 
-## Acknowledgements
+## Credits
 
-Developed by Klaus Behnam Shad. The code was written in collaboration with Claude (Anthropic).
+Developed by Klaus Behnam Shad, who designed the method, made all methodological decisions and is responsible for the content.
+
+AI tools assisted with parts of the work:
+
+- **Claude (Anthropic):** planning, design review and documentation
+- **Codex (OpenAI):** implementation of code components
+- **Muse (Meta):** prototype build from the approved plan
+
+The author reviewed every AI-assisted contribution before it was adopted.
 
 ## Kurzfassung
 
