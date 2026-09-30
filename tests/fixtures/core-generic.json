@@ -1,0 +1,33 @@
+{
+  "record_id": "2025-11-03_IMISCOE_0017",
+  "interview_date": "2025-11-03",
+  "interviewer": "Maria da Costa (0000-0002-1234-5678)",
+  "consent_status": "broad-research",
+  "accessRights": "restricted",
+  "title": "Life trajectory of a second-generation Moroccan-Dutch respondent in Rotterdam",
+  "interviewee_display": "Respondent R17",
+  "language": "nld",
+  "spatial": "Rotterdam, Netherlands",
+  "keywords": ["second generation", "integration", "Moroccan-Dutch", "identity", "Rotterdam"],
+  "abstract": "The respondent describes growing up between Moroccan family culture and Dutch school environment, navigation of identity in adolescence, and occupational trajectories in the context of neighbourhood change in Rotterdam.",
+  "timecoded_segments": [
+    {
+      "start": "00:00:00",
+      "end": "00:06:20",
+      "label": "Family background and arrival context"
+    },
+    {
+      "start": "00:06:20",
+      "end": "00:15:45",
+      "label": "School and peer environment"
+    },
+    {
+      "start": "00:15:45",
+      "end": "00:28:00",
+      "label": "Work and neighbourhood trajectories"
+    }
+  ],
+  "related_materials": [
+    "https://doi.org/10.0000/placeholder-transcript-r17"
+  ]
+}

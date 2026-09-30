@@ -1,0 +1,8 @@
+# Interview data and results stay local
+input/
+output/
+
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store

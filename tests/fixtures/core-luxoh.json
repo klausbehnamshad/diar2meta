@@ -1,0 +1,28 @@
+{
+  "record_id": "2024-05-18_LHI_0042",
+  "interview_date": "2024-05-18",
+  "interviewer": "Klaus Behnam Shad",
+  "consent_status": "research-only",
+  "accessRights": "restricted",
+  "title": "Interview with a former steelworker in Esch-Belval",
+  "interviewee_display": "Pseudonym A",
+  "language": "deu",
+  "spatial": "Esch-sur-Alzette",
+  "keywords": ["labour history", "migration", "memory", "steel industry"],
+  "abstract": "The narrator reflects on migration experiences, working life in Luxembourg's steel industry, and the intergenerational transmission of memory. The interview was conducted as part of the C²DH oral history project on industrial heritage in Luxembourg.",
+  "timecoded_segments": [
+    {
+      "start": "00:00:00",
+      "end": "00:04:12",
+      "label": "Early childhood and migration background"
+    },
+    {
+      "start": "00:04:12",
+      "end": "00:10:45",
+      "label": "Work in the steel factory"
+    }
+  ],
+  "related_materials": [
+    "https://gitlab.uni.lu/c2dh/lhi/luxoh-cmdi/-/raw/main/data/transcript-LHI-0042.docx"
+  ]
+}
