@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata from this file."
+type: software
+title: diar2meta
+abstract: >-
+  diar2meta drafts IMM-Core metadata records from local interview
+  transcripts, for example the output of diar2. It fills what can be
+  derived by rules, shows the evidence, and lists what a person must
+  fill in or confirm. Python standard library only; no network access,
+  no upload step. Consent status and access rights are never filled
+  automatically.
+authors:
+  - given-names: Klaus
+    family-names: Behnam Shad
+    orcid: "https://orcid.org/0000-0002-3601-9024"
+repository-code: "https://github.com/klausbehnamshad/diar2meta"
+license: Apache-2.0
+version: 0.1.0
+date-released: "2026-11-07"
+keywords:
+  - oral history
+  - metadata
+  - IMM-Core
+  - local-first
+  - interview data
